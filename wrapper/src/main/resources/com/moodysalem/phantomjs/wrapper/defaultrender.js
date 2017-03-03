@@ -57,7 +57,7 @@ var setZoom = function () {
 
 // this function renders the page
 var renderPage = function () {
-  setZoom();
+  // setZoom();
 
   // render the page
   try {

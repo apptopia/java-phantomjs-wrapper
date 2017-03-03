@@ -4,7 +4,7 @@
 
   <groupId>com.moodysalem</groupId>
   <artifactId>phantomjs-wrapper-parent</artifactId>
-  <version>3.0.0</version>
+  <version>3.0.0.3</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -47,10 +47,11 @@
   </developers>
 
   <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
+    <repository>
+      <id>bintray-azolotko-java-phantomjs-wrapper</id>
+      <name>azolotko-java-phantomjs-wrapper</name>
+      <url>https://api.bintray.com/maven/azolotko/java-phantomjs-wrapper/java-phantomjs-wrapper/;publish=1</url>
+    </repository>
   </distributionManagement>
 
   <dependencyManagement>
@@ -59,28 +60,28 @@
       <dependency>
         <groupId>com.moodysalem</groupId>
         <artifactId>phantomjs-wrapper</artifactId>
-        <version>${project.version}</version>
+        <version>3.0.0.3</version>
       </dependency>
 
       <!-- binary module dependencies -->
       <dependency>
         <groupId>com.moodysalem</groupId>
         <artifactId>phantomjs-wrapper-windows-binary</artifactId>
-        <version>${project.version}</version>
+        <version>3.0.0</version>
         <optional>true</optional>
       </dependency>
 
       <dependency>
         <groupId>com.moodysalem</groupId>
         <artifactId>phantomjs-wrapper-linux-binary</artifactId>
-        <version>${project.version}</version>
+        <version>3.0.0.3</version>
         <optional>true</optional>
       </dependency>
 
       <dependency>
         <groupId>com.moodysalem</groupId>
         <artifactId>phantomjs-wrapper-macosx-binary</artifactId>
-        <version>${project.version}</version>
+        <version>3.0.0</version>
         <optional>true</optional>
       </dependency>
 
@@ -190,18 +191,6 @@
         </executions>
       </plugin>
 
-      <!-- Handles the release and deploy to the staging repo with a deploy execution (nexus-staging:release) -->
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.5</version>
-        <extensions>true</extensions>
-        <configuration>
-          <serverId>ossrh</serverId>
-          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>true</autoReleaseAfterClose>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
 
